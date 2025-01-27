@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website with Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .tab {
+            display: none;
+        }
+        .tab-buttons {
+            margin-bottom: 10px;
+        }
+        .tab-buttons button {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";  
+            }
+            tablinks = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+
+    <div class="tab-buttons">
+        <button class="tab-button" onclick="openTab('Tab1')">Tab 1</button>
+        <button class="tab-button" onclick="openTab('Tab2')">Tab 2</button>
+        <button class="tab-button" onclick="openTab('Tab3')">Tab 3</button>
+    </div>
+
+    <div id="Tab1" class="tab tab-content">
+        <h2>Tab 1</h2>
+        <p>This is the content of Tab 1.</p>
+    </div>
+
+    <div id="Tab2" class="tab tab-content">
+        <h2>Tab 2</h2>
+        <p>This is the content of Tab 2.</p>
+    </div>
+
+    <div id="Tab3" class="tab tab-content">
+        <h2>Tab 3</h2>
+        <p>This is the content of Tab 3.</p>
+    </div>
+
+    <script>
+        // Open the first tab by default
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tab-button").click();
+        });
+    </script>
+
+</body>
+</html>
