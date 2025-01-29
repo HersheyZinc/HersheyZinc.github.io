@@ -4,7 +4,7 @@
 <head>
   <title>Lim Zhe Xun</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="img/profile.jpg" type="image/x-icon">
+  <link rel="icon" href="img/favicon.png" type="image/x-icon", sizes="96x96">
   <link rel="stylesheet" href="css/main.bundle.css">
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
 </head>
@@ -58,7 +58,7 @@
               Bachelors in Data Science and Artificial Intelligence
             </h2>
             <p>
-              <a href="docs/resumedraft2.pdf" class="icon has-text-light">
+              <a href="docs/resume.pdf" class="icon has-text-light">
                 <i class="fas fa-file-word"></i> <strong>Resume</strong>
               </a>
             </p>
@@ -73,11 +73,7 @@
     <div class="container">
       <h1 class="title">About Me</h1>
       <hr />
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-        laborum.</p>
+      <p>I am a penultimate year student pursuing a degree in Data Science and Artificial Intelligence. With a strong foundation in these fields, I am passionate about leveraging AI technologies to solve complex problems. My aspiration is to become an AI engineer, where I can contribute to innovative projects and drive advancements in artificial intelligence.</p>
     </div>
   </section>
 
@@ -210,72 +206,127 @@
     </div>
   </section>
 
+  <!-- Projects -->
   <section class="section">
     <div class="container">
       <h1 class="title">Projects</h1>
       <hr />
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/project-1-cover.png">
-                </figure>
-              </article>
+
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">AgentPPT</p>
+              <div class="tags">
+                <span class="tag">LLM</span>
+                <span class="tag">Agents</span>
+                <span class="tag">PowerPoint</span>
+              </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/project-2-cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/project-3-cover.png">
-                </figure>
-              </article>
-            </div>
+          </div>
+          <div class="content" id="project-1" style="display: none;">
+            <p>AgentPPT is an LLM-based tool that autonomously manages PowerPoint presentations. Users can interact with it via a chat interface, providing natural language instructions to modify slides. These instructions are converted into PowerPoint API calls, allowing precise control over slide content. AgentPPT excels in understanding complex inputs, ensuring accurate and contextually relevant modifications.</p>
+
+            <figure class="image is-16by9">
+              <img src="img/agentppt_demo.gif" alt="AgentPPT Demo">
+            </figure>
+          </div>
+          <div class="card-footer-item" style="text-align: center;">
+            <button class="button is-small is-info see-more" onclick="toggleContent('project-1', this)">Toggle View</button>
           </div>
         </div>
       </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-4-modal" src="img/project-4-cover.png">
-                </figure>
-              </article>
+
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Undergraduate Research Experience on CAmpus (URECA)</p>
+              <div class="tags">
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Image Processing</span>
+                <span class="tag">Image Segmentation</span>
+              </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-5-modal" src="img/project-5-cover.png">
-                </figure>
-              </article>
+          </div>
+          <div class="content" id="project-2" style="display: none;">
+            <p>I worked with a diverse team of academics to design and build a carbon-neutral hydroponics farm. We conducted controlled experiments on over 96 different vegetables to gather primary research data. I developed a machine learning dataset with over 10,000 data points detailing the growth stages of these vegetables. Additionally, I collected and labeled an image segmentation dataset of the hydroponic crops and evaluated the performance of various image segmentation models.</p>
+
+            <div class="video-container" style="display: flex; justify-content: center;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/kTXCBeacZIw?si=xUJwsXlG6gP1FMy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Project title</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-6-modal" src="img/project-6-cover.png">
-                </figure>
-              </article>
-            </div>
+          </div>
+          <div class="card-footer-item" style="text-align: center;">
+            <button class="button is-small is-info see-more" onclick="toggleContent('project-2', this)">Toggle View</button>
           </div>
         </div>
       </div>
+
+      
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">Deeper Experiential Engagement Project (DEEP)</p>
+              <div class="tags">
+                <span class="tag">Computer Vision</span>
+                <span class="tag">Image Processing</span>
+                <span class="tag">Image Classification</span>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="project-3" style="display: none;">
+            <p>I engineered a Convolutional Neural Network (CNN) model to classify screw types utilizing video data. Initially, challenges arose concerning image resolution and overfitting. To address these, I employed video cropping and model simplification techniques, which significantly enhanced accuracy. Subsequently, I explored advanced model architectures, incorporating pre-trained models such as InceptionV3, which provided robust and reliable classification capabilities. Additionally, I experimented with various hyperparameter tuning strategies to optimize model performance. Ultimately, the refined model was seamlessly integrated into a Telegram bot, ensuring user-friendly access and interaction.</p>
+
+            <figure class="image is-16by9">
+              <img src="img/DEEP_demo.gif" alt="AgentPPT Demo">
+            </figure>
+          </div>
+          <div class="card-footer-item" style="text-align: center;">
+            <button class="button is-small is-info see-more" onclick="toggleContent('project-3', this)">Toggle View</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">ECG Heartbeat Classification</p>
+              <div class="tags">
+                <span class="tag">Neural Networks</span>
+                <span class="tag">Time Series</span>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="project-4" style="display: none;">
+            <p>ECG heartbeat classification is vital for diagnosing heart conditions by identifying normal and abnormal rhythms. This project uses neural networks to classify ECG signals, focusing on data preprocessing, model architecture, and explainability. Our top model, a hybrid CNN-LSTM, achieved an F1 score of 0.983. Key objectives included analyzing the MIT-BIH Arrhythmia Database, data augmentation, and training various neural networks to optimize classification performance.</p>
+
+            <figure class="image is-16by9">
+              <img src="img/ECG_architecture.PNG" alt="AgentPPT Demo">
+            </figure>
+          </div>
+          <div class="card-footer-item" style="text-align: center;">
+            <button class="button is-small is-info see-more" onclick="toggleContent('project-4', this)">Toggle View</button>
+          </div>
+        </div>
+      </div>
+
+      
+
     </div>
   </section>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
 
   <!-- Education -->
   <section class="section">
@@ -348,7 +399,7 @@
             <div class="media-content">
               <p class="title is-4">Hwa Chong Junior College</p>
               <p class="subtitle is-6"><time datetime="2017-1">January 2017</time> - <time
-                  datetime="2018-12">December 2024</time></p>
+                  datetime="2018-12">December 2018</time></p>
             </div>
           </div>
           <div class="content">
@@ -359,9 +410,10 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section class="section">
     <div class="container">
-      <h1 class="title">Contact</h1>
+      <!-- <h1 class="title">Contact</h1> -->
       <hr />
       <nav class="level">
         <div class="level-item has-text-centered">
@@ -393,260 +445,6 @@
     </div>
   </section>
 
-  <!-- Modals -->
-  <div id="project-1-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-1-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-2-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-
-        <div id="project-2-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-3-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-3-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-4-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-4-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-5-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-5-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
-
-  <div id="project-6-modal" class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title">Project title</p>
-        <button class="delete" aria-label="close"></button>
-      </header>
-      <section class="modal-card-body">
-        <div id="project-6-modal-carousel" class="carousel">
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/1.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/2.png">
-          </figure>
-          <figure class="image is-4by3 carousel-cell">
-            <img src="img/carousel/3.png">
-          </figure>
-        </div>
-
-        <div class="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo
-            consequat.</p>
-          <div class="tags">
-            <span class="tag">angular</span>
-            <span class="tag">mongo</span>
-            <span class="tag">typscript</span>
-            <span class="tag">node</span>
-          </div>
-        </div>
-
-      </section>
-      <footer class="modal-card-foot">
-        <button class="button is-success">Close</button>
-      </footer>
-    </div>
-  </div>
 
   <!-- <footer class="footer">
     <div class="content has-text-centered">
