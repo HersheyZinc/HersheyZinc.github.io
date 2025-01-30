@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <!-- <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <div class="navbar-item is-hidden-desktop">
         <a href="https://github.com/HersheyZinc" class="icon is-large has-text-light">
@@ -37,10 +37,66 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
+  <style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-image: linear-gradient(#87CEEB, #2b5b6e);
+    }
 
-  <section class="hero is-primary">
+    .light-rays {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .ray1 {
+        position: absolute;
+        width: 10%;
+        height: 120%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+        transform: rotate(20deg);
+        top: -10%;
+        animation: lightMove1 6s infinite ease alternate;
+    }
+
+
+
+    @keyframes lightMove1 {
+        0% {
+            transform: translateX(0%) rotate(18deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(-20%) rotate(20deg);
+            opacity: 0.3;
+        }
+    }
+
+
+
+  </style>
+
+  <div class="light-rays">
+    <div class="ray1" style="left: 67%; animation-duration: 3s; width: var(--ray-width, 3%);"></div>
+    <div class="ray1" style="left: 70%; animation-duration: 6s; width: var(--ray-width, 5%);"></div>
+    <div class="ray1" style="left: 73%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
+    <div class="ray1" style="left: 76%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
+    <div class="ray1" style="left: 79%; animation-duration: 5s; width: var(--ray-width, 4%);"></div>
+    <div class="ray1" style="left: 82%; animation-duration: 3s; width: var(--ray-width, 3%);"></div>
+  </div>
+  <section class="hero">
     <div class="hero-body">
+      <!-- <div class="fish-container">
+        <div class="fish" id="fish1"></div>
+        <div class="fish" id="fish2"></div>
+      </div> -->
       <div class="container">
         <div class="level">
           <div class="level-item has-text-centered">
@@ -64,16 +120,52 @@
             </p>
           </div>
         </div>
+
       </div>
+
     </div>
+
   </section>
+  <style>
+    .fish-container {
+      position: relative;
+      width: 100%;
+      height: 100px;
+
+    }
+    .fish {
+      position: absolute;
+      width: 500px;
+      height: 200px;
+      background: url('img/fish.gif') no-repeat center center;
+      background-size: contain;
+      animation: swim 10s linear infinite;
+    }
+    #fish1 {
+      top: 20px;
+      animation-delay: 0s;
+    }
+    #fish2 {
+      top: 60px;
+      animation-delay: 5s;
+    }
+    @keyframes swim {
+      0% {
+        left: -50px;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+  </style>
 
 <!-- About me  -->
   <section class="section">
     <div class="container">
       <h1 class="title">About Me</h1>
       <hr />
-      <p>I am a penultimate year student pursuing a degree in Data Science and Artificial Intelligence. With a strong foundation in these fields, I am passionate about leveraging AI technologies to solve complex problems. My aspiration is to become an AI engineer, where I can contribute to innovative projects and drive advancements in artificial intelligence.</p>
+      <p>I am a final-year undergraduate pursuing a degree in Data Science and Artificial Intelligence, with a strong foundation in machine learning, data analysis, and creating AI-driven solutions. Passionate about harnessing AI technologies to tackle complex challenges, I strive to develop innovative and impactful solutions. My goal is to become an AI engineer, and contribute to cutting-edge projects that push the boundaries of artificial intelligence
+      </p>
     </div>
   </section>
 
@@ -224,15 +316,11 @@
               </div>
             </div>
           </div>
-          <div class="content" id="project-1" style="display: none;">
+          <div class="content" id="project-1">
             <p>AgentPPT is an LLM-based tool that autonomously manages PowerPoint presentations. Users can interact with it via a chat interface, providing natural language instructions to modify slides. These instructions are converted into PowerPoint API calls, allowing precise control over slide content. AgentPPT excels in understanding complex inputs, ensuring accurate and contextually relevant modifications.</p>
-
             <figure class="image is-16by9">
               <img src="img/agentppt_demo.gif" alt="AgentPPT Demo">
             </figure>
-          </div>
-          <div class="card-footer-item" style="text-align: center;">
-            <button class="button is-small is-info see-more" onclick="toggleContent('project-1', this)">Toggle View</button>
           </div>
         </div>
       </div>
@@ -249,16 +337,13 @@
               </div>
             </div>
           </div>
-          <div class="content" id="project-2" style="display: none;">
+          <div class="content" id="project-2">
             <p>I worked with a diverse team of academics to design and build a carbon-neutral hydroponics farm. We conducted controlled experiments on over 96 different vegetables to gather primary research data. I developed a machine learning dataset with over 10,000 data points detailing the growth stages of these vegetables. Additionally, I collected and labeled an image segmentation dataset of the hydroponic crops and evaluated the performance of various image segmentation models.</p>
-
             <div class="video-container" style="display: flex; justify-content: center;">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/kTXCBeacZIw?si=xUJwsXlG6gP1FMy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="640" height="400" src="https://www.youtube.com/embed/kTXCBeacZIw?si=xUJwsXlG6gP1FMy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
-          <div class="card-footer-item" style="text-align: center;">
-            <button class="button is-small is-info see-more" onclick="toggleContent('project-2', this)">Toggle View</button>
-          </div>
+
         </div>
       </div>
 
@@ -275,15 +360,12 @@
               </div>
             </div>
           </div>
-          <div class="content" id="project-3" style="display: none;">
+          <div class="content" id="project-3">
             <p>I engineered a Convolutional Neural Network (CNN) model to classify screw types utilizing video data. Initially, challenges arose concerning image resolution and overfitting. To address these, I employed video cropping and model simplification techniques, which significantly enhanced accuracy. Subsequently, I explored advanced model architectures, incorporating pre-trained models such as InceptionV3, which provided robust and reliable classification capabilities. Additionally, I experimented with various hyperparameter tuning strategies to optimize model performance. Ultimately, the refined model was seamlessly integrated into a Telegram bot, ensuring user-friendly access and interaction.</p>
 
             <figure class="image is-16by9">
               <img src="img/DEEP_demo.gif" alt="AgentPPT Demo">
             </figure>
-          </div>
-          <div class="card-footer-item" style="text-align: center;">
-            <button class="button is-small is-info see-more" onclick="toggleContent('project-3', this)">Toggle View</button>
           </div>
         </div>
       </div>
@@ -299,16 +381,14 @@
               </div>
             </div>
           </div>
-          <div class="content" id="project-4" style="display: none;">
+          <div class="content" id="project-4">
             <p>ECG heartbeat classification is vital for diagnosing heart conditions by identifying normal and abnormal rhythms. This project uses neural networks to classify ECG signals, focusing on data preprocessing, model architecture, and explainability. Our top model, a hybrid CNN-LSTM, achieved an F1 score of 0.983. Key objectives included analyzing the MIT-BIH Arrhythmia Database, data augmentation, and training various neural networks to optimize classification performance.</p>
 
             <figure class="image is-16by9">
               <img src="img/ECG_architecture.PNG" alt="AgentPPT Demo">
             </figure>
           </div>
-          <div class="card-footer-item" style="text-align: center;">
-            <button class="button is-small is-info see-more" onclick="toggleContent('project-4', this)">Toggle View</button>
-          </div>
+
         </div>
       </div>
 
@@ -317,16 +397,6 @@
     </div>
   </section>
 
-  <script>
-    function toggleContent(id) {
-      const content = document.getElementById(id);
-      if (content.style.display === "none") {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
-    }
-  </script>
 
   <!-- Education -->
   <section class="section">
@@ -344,7 +414,7 @@
             </div>
             <div class="media-content">
               <p class="title is-4">Nanyang Technological University</p>
-              <p class="subtitle is-6">Bachelor of Computer Science - Data Science and Artificial Intelligence - <time datetime="2021-8">August 2021</time> - <time
+              <p class="subtitle is-6">Bachelor of Computer Science, Data Science and Artificial Intelligence - <time datetime="2021-8">August 2021</time> - <time
                 datetime="2025-5">May 2025</time></p>
             </div>
           </div>
