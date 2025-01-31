@@ -61,19 +61,20 @@
         width: 10%;
         height: 120%;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-        top: -10%;
-        animation: lightMove1 6s infinite ease alternate;
+        top: -25%;
+        rotate: 20deg;
+        animation: lightMove1 6s infinite ease-in alternate;
     }
 
 
     @keyframes lightMove1 {
         0% {
-            transform: translateX(0%) rotate(20deg);
-            opacity: 0;
+            transform: translateX(0%);
+            opacity: 0.1;
         }
         100% {
-            transform: translateX(-30%) rotate(21deg);
-            opacity: 0.5;
+            transform: translateX(-15%);
+            opacity: 0.4;
         }
     }
 
@@ -82,19 +83,20 @@
         width: 10%;
         height: 120%;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-        top: -10%;
-        animation: lightMove2 6s infinite ease alternate;
+        top: -20%;
+        rotate: 20deg;
+        animation: lightMove2 6s infinite ease-in-out alternate;
     }
 
 
     @keyframes lightMove2 {
         0% {
-            transform: translateX(0%) rotate(23deg);
-            opacity: 0.4;
+            transform: translateX(-5%);
+            opacity: 0.5;
         }
         100% {
-            transform: translateX(40%) rotate(22deg);
-            opacity: 0.1;
+            transform: translateX(10%);
+            opacity: 0.0;
         }
     }
 
@@ -142,23 +144,32 @@
   </style>
 
   <div class="light-rays">
-    <div class="ray1" style="left: 65%; animation-duration: 6s; width: var(--ray-width, 3%);"></div>
-    <div class="ray1" style="left: 71%; animation-duration: 5s; width: var(--ray-width, 3%);"></div>
-    <div class="ray2" style="left: 62%; animation-duration: 6.5s; width: var(--ray-width, 4%);"></div>
-    <div class="ray2" style="left: 70%; animation-duration: 7s; width: var(--ray-width, 4%);"></div>
-    <div class="ray1" style="left: 66%; animation-duration: 10s; width: var(--ray-width, 4%);"></div>
-    <div class="ray1" style="left: 60%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
-    <div class="ray1" style="left: 63%; animation-duration: 2s; width: var(--ray-width, 1%);"></div>
-    <div class="ray2" style="left: 73%; animation-duration: 3s; width: var(--ray-width, 2%);"></div>
-    <div class="ray2" style="left: 72%; animation-duration: 4s; width: var(--ray-width, 1%);"></div>
-    <div class="ray1" style="left: 68%; animation-duration: 5s; width: var(--ray-width, 3%);"></div>
-    <div class="ray2" style="left: 66%; animation-duration: 3.5s; width: var(--ray-width, 2%);"></div>
-    <div class="ray1" style="left: 70%; animation-duration: 6s; width: var(--ray-width, 3%);"></div>
-    <div class="ray2" style="left: 64%; animation-duration: 2.5s; width: var(--ray-width, 1%);"></div>
-    <div class="ray2" style="left: 67%; animation-duration: 3s; width: var(--ray-width, 2%);"></div>
-    <div class="ray1" style="left: 75%; animation-duration: 7s; width: var(--ray-width, 2%);"></div>
-    <div class="ray2" style="left: 77%; animation-duration: 10s; width: var(--ray-width, 1.5%);"></div>
-    <div class="ray1" style="left: 58%; animation-duration: 9s; width: var(--ray-width, 2%);"></div>
+
+    <script>
+      function spawnLightRays(rayCount = 30, meanLeft = 0.73, stdDevLeft = 0.15, meanDuration = 2, stdDevDuration = 0.5, meanWidth=30, stdDevWidth=20) {
+        const lightRaysContainer = document.querySelector('.light-rays');
+        for (let i = 0; i < rayCount; i++) {
+          const ray = document.createElement('div');
+          ray.className = Math.random() < 0.5 ? 'ray1' : 'ray2';
+
+          // Generate a random left position based on normal distribution
+          let leftPosition= meanLeft + stdDevLeft * (Math.random() * 2 - 1);
+          let animationDuration = meanDuration + stdDevDuration * (Math.random() * 2 - 1);
+          let rayWidth = meanWidth + stdDevWidth * (Math.random() * 2 - 1);
+
+
+          ray.style.width = `var(--ray-width, ${rayWidth}px)`;
+          ray.style.left = `${leftPosition * 100}%`;
+          ray.style.animationDuration = `${animationDuration}s`;
+          const angle = (meanLeft-leftPosition) * 70 + 25; // Scale angle based on position
+          ray.style.rotate = `${angle}deg`;
+
+          lightRaysContainer.appendChild(ray);
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => spawnLightRays());
+    </script>
   </div>
   <div class="fish-container">
     <script>
@@ -182,7 +193,7 @@
       }
 
       document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 7, 0.0, 0.5, 8000)); //turtle
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 2, 0.0, 0.1, 2000)); //turtle
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 3, 0.0, 0.2, 3000)); //turtle
       document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish2.gif', 60,  15, 0.05, 0.7, 6000)); //swordfish
       document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish3.gif', 90,  3 , 0.3, 0.8, 20000)); //octopus
       document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish4.gif', 80,  8, 0.6, 0.9, 8000)); //eel
@@ -199,9 +210,26 @@
         fishContainer.removeChild(fishContainer.firstChild);
       }
     });
-    
-
   </script>
+  <button id="add-fish-button" style="position: fixed; top: 10px; right: 90px; z-index: 1000;">Add Fish</button>
+  <script>
+    document.getElementById('add-fish-button').addEventListener('click', () => {
+      const fishContainer = document.querySelector('.fish-container');
+      const fish = document.createElement('div');
+      fish.className = Math.random() < 0.5 ? 'fishleft' : 'fishright';
+      const fishImages = ['img/fish/fish1.gif', 'img/fish/fish2.gif', 'img/fish/fish3.gif', 'img/fish/fish4.gif', 'img/fish/fish5.gif'];
+      const randomImage = fishImages[Math.floor(Math.random() * fishImages.length)];
+      fish.style.background = `url('${randomImage}') no-repeat center center`;
+      const visibleTop = window.scrollY;
+      const visibleBottom = visibleTop + window.innerHeight;
+      fish.style.top = `${Math.random() * (visibleBottom - visibleTop) + visibleTop}px`; // Random position within the visible screen area
+      const screenWidthFactor = window.innerWidth / 1920; // Assuming 1920px as a base screen width
+      fish.style.animationDuration = `${(Math.random() * 10 + 70) * screenWidthFactor}s`; // Random speed
+      fishContainer.appendChild(fish);
+    });
+  </script>
+
+
   <section class="hero">
     <div class="hero-body">
 
