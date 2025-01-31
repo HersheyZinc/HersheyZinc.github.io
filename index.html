@@ -61,35 +61,60 @@
         width: 10%;
         height: 120%;
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
-        transform: rotate(20deg);
         top: -10%;
         animation: lightMove1 6s infinite ease alternate;
     }
 
 
-
     @keyframes lightMove1 {
         0% {
-            transform: translateX(0%) rotate(18deg);
+            transform: translateX(0%) rotate(20deg);
             opacity: 0;
         }
         100% {
-            transform: translateX(-20%) rotate(20deg);
-            opacity: 0.3;
+            transform: translateX(-30%) rotate(20deg);
+            opacity: 0.4;
         }
     }
 
+    .ray2 {
+        position: absolute;
+        width: 10%;
+        height: 120%;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+        top: -10%;
+        animation: lightMove2 6s infinite ease alternate;
+    }
 
+
+    @keyframes lightMove2 {
+        0% {
+            transform: translateX(0%) rotate(19deg);
+            opacity: 0.4;
+        }
+        100% {
+            transform: translateX(40%) rotate(19deg);
+            opacity: 0;
+        }
+    }
 
   </style>
 
   <div class="light-rays">
-    <div class="ray1" style="left: 67%; animation-duration: 3s; width: var(--ray-width, 3%);"></div>
-    <div class="ray1" style="left: 70%; animation-duration: 6s; width: var(--ray-width, 5%);"></div>
-    <div class="ray1" style="left: 73%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
-    <div class="ray1" style="left: 76%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
-    <div class="ray1" style="left: 79%; animation-duration: 5s; width: var(--ray-width, 4%);"></div>
-    <div class="ray1" style="left: 82%; animation-duration: 3s; width: var(--ray-width, 3%);"></div>
+    <div class="ray1" style="left: 65%; animation-duration: 6s; width: var(--ray-width, 3%);"></div>
+    <div class="ray1" style="left: 71%; animation-duration: 5s; width: var(--ray-width, 3%);"></div>
+    <div class="ray2" style="left: 62%; animation-duration: 6.5s; width: var(--ray-width, 4%);"></div>
+    <div class="ray2" style="left: 70%; animation-duration: 7s; width: var(--ray-width, 4%);"></div>
+    <div class="ray1" style="left: 66%; animation-duration: 10s; width: var(--ray-width, 4%);"></div>
+    <div class="ray1" style="left: 60%; animation-duration: 4s; width: var(--ray-width, 2%);"></div>
+    <div class="ray1" style="left: 63%; animation-duration: 2s; width: var(--ray-width, 1%);"></div>
+    <div class="ray2" style="left: 73%; animation-duration: 3s; width: var(--ray-width, 2%);"></div>
+    <div class="ray2" style="left: 72%; animation-duration: 4s; width: var(--ray-width, 1%);"></div>
+    <div class="ray1" style="left: 68%; animation-duration: 5s; width: var(--ray-width, 3%);"></div>
+    <div class="ray2" style="left: 66%; animation-duration: 3.5s; width: var(--ray-width, 2%);"></div>
+    <div class="ray1" style="left: 70%; animation-duration: 6s; width: var(--ray-width, 3%);"></div>
+    <div class="ray2" style="left: 64%; animation-duration: 2.5s; width: var(--ray-width, 1%);"></div>
+    <div class="ray2" style="left: 67%; animation-duration: 3s; width: var(--ray-width, 2%);"></div>
   </div>
   <section class="hero">
     <div class="hero-body">
