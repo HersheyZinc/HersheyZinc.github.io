@@ -146,13 +146,16 @@
   <div class="light-rays">
 
     <script>
-      function spawnLightRays(rayCount = 30, meanLeft = 0.73, stdDevLeft = 0.15, meanDuration = 2, stdDevDuration = 0.5, meanWidth=30, stdDevWidth=20) {
+      function spawnLightRays(meanLeft = 0.73, stdDevLeft = 0.15, meanDuration = 2, stdDevDuration = 0.5, meanWidth=30, stdDevWidth=20) {
         const lightRaysContainer = document.querySelector('.light-rays');
+        const baseRayCount = 10; // Base number of rays for a standard screen size
+        const screenWidthFactor = window.innerWidth / 960; // Assuming 1920px as a base screen width
+        const rayCount = Math.floor(baseRayCount + 10 * screenWidthFactor); // Scale ray count based on screen size
         for (let i = 0; i < rayCount; i++) {
           const ray = document.createElement('div');
           ray.className = Math.random() < 0.5 ? 'ray1' : 'ray2';
 
-          // Generate a random left position based on normal distribution
+          // Generate a random left position based on normal distributions
           let leftPosition= meanLeft + stdDevLeft * (Math.random() * 2 - 1);
           let animationDuration = meanDuration + stdDevDuration * (Math.random() * 2 - 1);
           let rayWidth = meanWidth + stdDevWidth * (Math.random() * 2 - 1);
