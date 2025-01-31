@@ -174,20 +174,34 @@
           fish.className = Math.random() < 0.5 ? 'fishleft' : 'fishright';
           fish.style.background = `url('${imagePath}') no-repeat center center`;
           fish.style.top = `${(Math.random() * (spawnBottom-spawnTop) + spawnTop) * document.body.scrollHeight}px`; // Random vertical position between spawnTop and spawnBottom
-          fish.style.animationDuration = `${Math.random() * 40 + baseSpeed}s`; // Random animation speed between 80s and 120s
+          const screenWidthFactor = window.innerWidth / 1920; // Assuming 1920px as a base screen width
+          fish.style.animationDuration = `${(Math.random() * 40 + baseSpeed) * screenWidthFactor}s`; // Adjust speed based on screen size
           fishContainer.appendChild(fish);
           fishAdded++;
         }, spawnFreq);
       }
 
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 15, 0.0, 0.6, 8000)); //turtle
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 7, 0.0, 0.5, 8000)); //turtle
       document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish1.gif', 100, 2, 0.0, 0.1, 2000)); //turtle
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish2.gif', 60,  15, 0.1, 0.7, 6000)); //swordfish
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish3.gif', 90,  5 , 0.2, 0.8, 20000)); //octopus
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish4.gif', 80,  10, 0.5, 0.9, 8000)); //eel
-      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish5.gif', 120, 7, 0.7, 1.0, 10000)); // anglerfish
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish2.gif', 60,  15, 0.05, 0.7, 6000)); //swordfish
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish3.gif', 90,  3 , 0.3, 0.8, 20000)); //octopus
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish4.gif', 80,  8, 0.6, 0.9, 8000)); //eel
+      document.addEventListener('DOMContentLoaded', () => spawnFish('img/fish/fish5.gif', 120, 5, 0.7, 1.0, 10000)); // anglerfish
     </script>
   </div>
+
+
+  <button id="remove-fish-button" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">Clear Fish</button>
+  <script>
+    document.getElementById('remove-fish-button').addEventListener('click', () => {
+      const fishContainer = document.querySelector('.fish-container');
+      while (fishContainer.firstChild) {
+        fishContainer.removeChild(fishContainer.firstChild);
+      }
+    });
+    
+
+  </script>
   <section class="hero">
     <div class="hero-body">
 
